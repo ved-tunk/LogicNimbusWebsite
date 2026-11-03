@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 246 248 255; --bg2: 234 240 255; --fg: 14 22 48; --muted: 60 71 114;
+  --line: 14 22 48; --volt: 99 85 240; --dawn: 196 98 24;
+}
+.dark {
+  --bg: 14 22 48; --bg2: 22 32 74; --fg: 234 240 255; --muted: 154 167 208;
+  --line: 154 167 208; --volt: 123 108 255; --dawn: 255 178 122;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body { @apply bg-base font-body text-fg antialiased overflow-x-hidden; }
+:focus-visible { outline: 2px solid rgb(var(--dawn)); outline-offset: 3px; }
+
+@layer components {
+  .wrap { @apply mx-auto max-w-5xl px-6; }
+  .sec { @apply py-14 md:py-[72px]; }
+  .h2 { @apply mb-3 font-display text-[clamp(1.6rem,3vw,2.3rem)] font-bold leading-[1.1] tracking-tight; }
+  .h3 { @apply mb-2 font-display text-lg font-bold leading-tight; }
+  .sub { @apply mb-9 max-w-[62ch] text-muted; }
+  .btn { @apply inline-block cursor-pointer rounded-full bg-volt px-5 py-2.5 text-[.95rem] font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_-8px_rgb(var(--volt))]; }
+  .btn-ghost { @apply bg-transparent text-fg shadow-[inset_0_0_0_1.5px_rgb(var(--fg)/.35)] hover:shadow-[inset_0_0_0_1.5px_rgb(var(--fg))]; }
+}
+
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s, transform .7s; }
+.reveal.in { opacity: 1; transform: none; }
+.line-mask { display: block; overflow: hidden; padding-bottom: .1em; }
+.line-mask > span { display: block; transform: translateY(110%); }
+.fade-in { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition: none !important; }
+  .reveal, .fade-in { opacity: 1; transform: none; }
+  .line-mask > span { transform: none; }
+}
