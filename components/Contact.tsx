@@ -19,8 +19,6 @@ export default function Contact() {
           <h2 className="h2">Let&apos;s talk.</h2>
           <p className="mb-4 text-muted">Whether you are a business ready to bring AI into your work, or a talented person who wants to make a mark in AI, we would like to hear from you.</p>
           <a href="mailto:contact@logicnimbus.com" className="mb-7 inline-block border-b-2 border-dawn font-display text-xl font-semibold text-dawn">contact@logicnimbus.com</a>
-          <h3 className="h3">Our location</h3>
-          <address className="text-[.96rem] not-italic text-muted">LogicNimbus Private Limited<br />Plot 50, Bajarang Society,<br />Behind Rajsarathi Soc. Vadala Pathardi Road,<br />Indira Nagar, Nashik, Maharashtra 422009, India</address>
         </div>
         <form onSubmit={submit} className="grid content-start gap-3.5">
           <label className="grid gap-1.5 text-sm text-muted">Name<input name="name" required autoComplete="name" className={field} /></label>

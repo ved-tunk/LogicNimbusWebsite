@@ -1,19 +1,16 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { useTheme } from "next-themes";
 
 type P = { x: number; y: number; hx: number; hy: number; vx: number; vy: number; r: number; p: number; warm: boolean };
 
 export default function Hero() {
   const ref = useRef<HTMLCanvasElement>(null);
-  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     const cv = ref.current;
     const ctx = cv?.getContext("2d");
     if (!cv || !ctx) return;
-    const light = resolvedTheme === "light";
-    const dot = light ? "#4B3FE0" : "#EAF0FF", warm = light ? "#D9772B" : "#FFB27A", rgb = light ? "75,63,224" : "154,167,255";
+    const dot = "#4B3FE0", warm = "#D9772B", rgb = "75,63,224";
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const dpr = Math.min(devicePixelRatio || 1, 2);
     const gauss = () => (Math.random() + Math.random() + Math.random() - 1.5) / 1.5;
@@ -54,14 +51,14 @@ export default function Hero() {
     host.addEventListener("pointermove", move);
     host.addEventListener("pointerleave", leave);
     return () => { cancelAnimationFrame(raf); removeEventListener("resize", resize); host.removeEventListener("pointermove", move); host.removeEventListener("pointerleave", leave); };
-  }, [resolvedTheme]);
+  }, []);
 
   return (
     <section className="relative flex min-h-[90svh] items-center overflow-hidden bg-[radial-gradient(ellipse_at_70%_50%,rgb(var(--bg2)),rgb(var(--bg))_70%)]">
       <canvas ref={ref} aria-hidden="true" className="absolute inset-0 h-full w-full" />
       <div className="pointer-events-none relative z-10 px-[max(24px,6vw)] pb-16 pt-28">
         <p className="fade-in mb-5 inline-flex animate-fade items-center gap-2 rounded-full border border-line/25 px-3.5 py-1.5 text-sm text-muted [animation-delay:.1s]">
-          <i className="h-[7px] w-[7px] animate-ping2 rounded-full bg-dawn" />AI product company, Nashik, India
+          <i className="h-[7px] w-[7px] animate-ping2 rounded-full bg-dawn" />AI product company
         </p>
         <h1 className="font-display text-[clamp(2.2rem,5.6vw,4.2rem)] font-bold leading-[1.1] tracking-tight">
           <span className="line-mask"><span className="animate-rise">Harvesting the</span></span>

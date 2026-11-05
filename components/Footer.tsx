@@ -2,8 +2,7 @@ const links = [
   ["Privacy Policy", "https://logicnimbus.com/privacy-policy"],
   ["Cookies Policy", "https://logicnimbus.com/cookies-policy"],
   ["Terms of Service", "https://logicnimbus.com/terms-of-use"],
-  ["Twitter", "https://twitter.com/logicnimbus"],
-  ["LinkedIn", "https://www.linkedin.com/company/logicnimbus"],
+  ["LinkedIn", "https://www.linkedin.com/showcase/logicnimbuspvtltd/home/"],
 ];
 
 export default function Footer() {

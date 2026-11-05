@@ -1,5 +1,5 @@
 export const services = [
-  { title: "Voice and speech AI", text: "Speech recognition and voice to text that understands how people really talk. This is the technology behind Tunk.", icon: ["M18 5h12v22H18z", "M10 22a14 14 0 0 0 28 0M24 36v8"] },
+  { title: "Voice and speech AI", text: "Real-time speech to text and conversational voice agents that understand how people really talk. This is the technology behind Tunk.", icon: ["M18 5h12v22H18z", "M10 22a14 14 0 0 0 28 0M24 36v8"] },
   { title: "Custom AI solutions", text: "Bespoke models and tools shaped around your data, your team and the problem you actually have.", icon: ["M24 4v10M24 34v10M4 24h10M34 24h10M10 10l7 7M31 31l7 7M38 10l-7 7M17 31l-7 7"] },
   { title: "Machine learning", text: "Prediction, classification and pattern finding that turn raw records into decisions you can act on.", icon: ["M6 40V8M6 40h36", "M12 32l9-10 7 6 12-16"] },
   { title: "Workflow automation", text: "Repetitive steps handled by AI, so your people spend time on judgment, relationships and creative work.", icon: ["M8 24h12l4-10 6 20 4-10h6"] },
@@ -22,7 +22,15 @@ export const faqs = [
   ["What does LogicNimbus do?", "We are an AI product company. We build our own products, such as Tunk, and we create custom AI solutions for businesses."],
   ["Can you build AI for my specific business?", "Yes. Tailored solutions are a core part of our work. We start by learning your workflow, then design something that fits into it."],
   ["How do you handle ethics and bias?", "We design for fairness, transparency and accountability from the first prototype, and we review systems for bias before and after launch."],
-  ["Where are you based?", "Our office is in Indira Nagar, Nashik, Maharashtra, India. We work with teams anywhere."],
   ["How do I start a project or join the team?", "Email contact@logicnimbus.com with a short note about your idea or your skills. We read every message."],
 ];
 export const keywords = ["Voice AI", "Machine learning", "Automation", "Language models", "Data analysis", "Custom AI", "Ethical by design"];
+
+export const tunkSteps = ["Define and configure your agent", "Equip and connect it to your tools", "Test, refine and deploy"];
+export const tunkFeatures = [
+  { title: "Voice agents", text: "Inbound and outbound calls handled end to end, in a natural voice that follows context across turns." },
+  { title: "Cloud dialer", text: "Connect Twilio or Plivo, point a campaign at your list, and the agent takes every call." },
+  { title: "Tools and APIs", text: "Agents book, look up and update records mid-call, then write the outcome back to Salesforce, HubSpot or Zoho." },
+  { title: "Call analytics", text: "Sentiment, intent and outcome scored on every conversation the moment it ends." },
+  { title: "Speech to text", text: "Real-time transcription across dozens of languages and accents, returned while the caller is still speaking." },
+];
