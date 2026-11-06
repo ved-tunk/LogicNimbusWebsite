@@ -1,7 +1,7 @@
 const links = [
-  ["Privacy Policy", "https://logicnimbus.com/privacy-policy"],
-  ["Cookies Policy", "https://logicnimbus.com/cookies-policy"],
-  ["Terms of Service", "https://logicnimbus.com/terms-of-use"],
+  ["Privacy Policy", "/privacy-policy"],
+  ["Cookies Policy", "/cookies-policy"],
+  ["Terms of Service", "/terms-of-use"],
   ["LinkedIn", "https://www.linkedin.com/showcase/logicnimbuspvtltd/home/"],
 ];
 
@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="wrap flex flex-wrap justify-between gap-3.5">
         <p>&copy; {new Date().getFullYear()} LogicNimbus Private Limited</p>
         <nav aria-label="Legal" className="flex flex-wrap gap-[18px]">
-          {links.map(([l, h]) => <a key={h} href={h} className="hover:text-fg" {...(h.includes("logicnimbus.com/") && !h.includes("linkedin") ? {} : { target: "_blank", rel: "noopener noreferrer" })}>{l}</a>)}
+          {links.map(([l, h]) => <a key={h} href={h} className="hover:text-fg" {...(h.startsWith("/") || h.includes("logicnimbus.com/") ? {} : { target: "_blank", rel: "noopener noreferrer" })}>{l}</a>)}
         </nav>
       </div>
     </footer>

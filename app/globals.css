@@ -16,7 +16,7 @@ body { @apply bg-base font-body text-fg antialiased overflow-x-hidden; }
 :focus-visible { outline: 2px solid rgb(var(--dawn)); outline-offset: 3px; }
 
 @layer components {
-  .wrap { @apply mx-auto max-w-5xl px-6; }
+  .wrap { @apply mx-auto max-w-[1200px] px-5 sm:px-8; }
   .sec { @apply py-14 md:py-[72px]; }
   .h2 { @apply mb-3 font-display text-[clamp(1.6rem,3vw,2.3rem)] font-bold leading-[1.1] tracking-tight; }
   .h3 { @apply mb-2 font-display text-lg font-bold leading-tight; }

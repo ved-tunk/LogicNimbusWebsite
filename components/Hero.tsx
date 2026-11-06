@@ -56,7 +56,7 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-[90svh] items-center overflow-hidden bg-[radial-gradient(ellipse_at_70%_50%,rgb(var(--bg2)),rgb(var(--bg))_70%)]">
       <canvas ref={ref} aria-hidden="true" className="absolute inset-0 h-full w-full" />
-      <div className="pointer-events-none relative z-10 px-[max(24px,6vw)] pb-16 pt-28">
+      <div className="relative z-10 w-full"><div className="pointer-events-none mx-auto max-w-[1200px] px-5 pb-16 pt-28 sm:px-8">
         <p className="fade-in mb-5 inline-flex animate-fade items-center gap-2 rounded-full border border-line/25 px-3.5 py-1.5 text-sm text-muted [animation-delay:.1s]">
           <i className="h-[7px] w-[7px] animate-ping2 rounded-full bg-dawn" />AI product company
         </p>
@@ -69,7 +69,7 @@ export default function Hero() {
           <a href="#tunk" className="btn">Meet Tunk</a>
           <a href="#contact" className="btn btn-ghost">Talk to our team</a>
         </div>
-      </div>
+      </div></div>
       <p className="absolute bottom-4 right-6 z-10 hidden text-xs text-muted md:block">Move your cursor through the cloud</p>
     </section>
   );
