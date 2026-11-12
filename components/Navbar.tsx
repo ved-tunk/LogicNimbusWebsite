@@ -20,7 +20,7 @@ export default function Navbar() {
         </a>
       <nav className="flex items-center gap-5 text-[.92rem] font-medium" aria-label="Main">
         {links.map(([l, h]) => <a key={h} href={h} className="hidden text-muted transition hover:text-fg md:block">{l}</a>)}
-        <a href="/#contact" className="btn !px-4 !py-1.5 !text-sm">Contact us</a>
+        <a href="https://tunk.ai/contact-us" target="_blank" rel="noopener noreferrer" className="btn !px-4 !py-1.5 !text-sm">Contact us</a>
       </nav>
       </div>
     </header>

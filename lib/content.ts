@@ -35,8 +35,7 @@ export const tunkFeatures = [
   { title: "Speech to text", text: "Real-time transcription across dozens of languages and accents, returned while the caller is still speaking." },
 ];
 
-// TODO: replace with the real Tunk documentation URL
-export const docsUrl = "https://tunk.ai/";
+export const docsUrl = "https://tunk.ai/docs";
 export const specs = [
   ["Category", "Conversational Agentic AI"],
   ["Languages", "30+ (International + Regional)"],

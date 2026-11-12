@@ -14,15 +14,16 @@ export default function Hero() {
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const dpr = Math.min(devicePixelRatio || 1, 2);
     const gauss = () => (Math.random() + Math.random() + Math.random() - 1.5) / 1.5;
-    let W = 0, H = 0, pts: P[] = [], raf = 0, mx = -999, my = -999;
+    let W = 0, H = 0, pts: P[] = [], raf = 0, mx = -999, my = -999, link = 95;
 
     const init = () => {
       W = cv.clientWidth; H = cv.clientHeight;
       cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const wide = W > 800, n = Math.min(170, Math.floor((W * H) / 8000));
-      const cx = wide ? W * 0.68 : W * 0.5, cy = H * (wide ? 0.5 : 0.78);
+      const wide = W > 800, n = Math.min(170, Math.floor((W * H) / (W > 800 ? 8000 : 2400)));
+      const cx = wide ? W * 0.68 : W * 0.5, cy = H * 0.5;
+      link = wide ? 95 : 70;
       pts = Array.from({ length: n }, () => {
-        const hx = cx + gauss() * W * (wide ? 0.2 : 0.4), hy = cy + gauss() * H * 0.16 - Math.abs(gauss()) * H * 0.06;
+        const hx = cx + gauss() * W * (wide ? 0.2 : 0.4), hy = cy + gauss() * H * (wide ? 0.16 : 0.24) - Math.abs(gauss()) * H * 0.06;
         return { x: hx, y: hy, hx, hy, vx: 0, vy: 0, r: Math.random() * 2 + 1, p: Math.random() * 6.28, warm: Math.random() < 0.08 };
       });
     };
@@ -37,7 +38,7 @@ export default function Hero() {
       }
       for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
         const a = pts[i], b = pts[j], d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (d < 95) { ctx.strokeStyle = `rgba(${rgb},${(1 - d / 95) * 0.35})`; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+        if (d < link) { ctx.strokeStyle = `rgba(${rgb},${(1 - d / link) * 0.35})`; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
       }
       for (const p of pts) { ctx.fillStyle = p.warm ? warm : dot; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.28); ctx.fill(); }
       if (!reduce) raf = requestAnimationFrame(frame);
@@ -54,8 +55,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex min-h-[90svh] items-center overflow-hidden bg-[radial-gradient(ellipse_at_70%_50%,rgb(var(--bg2)),rgb(var(--bg))_70%)]">
-      <canvas ref={ref} aria-hidden="true" className="absolute inset-0 h-full w-full" />
+    <section className="relative flex min-h-[100svh] items-start overflow-hidden md:min-h-[90svh] md:items-center bg-[radial-gradient(ellipse_at_70%_50%,rgb(var(--bg2)),rgb(var(--bg))_70%)]">
+      <canvas ref={ref} aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[44%] w-full md:inset-0 md:h-full" />
       <div className="relative z-10 w-full"><div className="pointer-events-none mx-auto max-w-[1200px] px-5 pb-16 pt-28 sm:px-8">
         <p className="fade-in mb-5 inline-flex animate-fade items-center gap-2 rounded-full border border-line/25 px-3.5 py-1.5 text-sm text-muted [animation-delay:.1s]">
           <i className="h-[7px] w-[7px] animate-ping2 rounded-full bg-dawn" />AI product company
@@ -67,7 +68,7 @@ export default function Hero() {
         <p className="fade-in mb-7 mt-5 max-w-[46ch] animate-fade text-[1.1rem] text-muted [animation-delay:.7s]">We build AI products that make work simpler, faster and more creative, for businesses of every size.</p>
         <div className="fade-in pointer-events-auto flex animate-fade flex-wrap gap-3 [animation-delay:.9s]">
           <a href="#tunk" className="btn">Meet Tunk</a>
-          <a href="#contact" className="btn btn-ghost">Talk to our team</a>
+          <a href="https://tunk.ai/contact-us" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Talk to our team</a>
         </div>
       </div></div>
       <p className="absolute bottom-4 right-6 z-10 hidden text-xs text-muted md:block">Move your cursor through the cloud</p>

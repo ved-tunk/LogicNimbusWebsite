@@ -34,7 +34,7 @@ const sections: LegalSection[] = [
   ] },
   { h: "Responsibility and contact", ps: [
     "LogicNimbus is jointly responsible for any personal data collected by cookies as described in this Cookie Notice and has entered into an agreement setting out the respective data protection responsibilities. A summary of the content of that agreement is made available upon request.",
-    "In case of any request in connection with this Cookie Notice, please contact support@logicnimbus.com.",
+    "In case of any request in connection with this Cookie Notice, please contact contact@logicnimbus.com.",
   ] },
 ];
 

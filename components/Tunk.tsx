@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { docsUrl, specs, useCases } from "@/lib/content";
 
@@ -26,7 +27,7 @@ const BATCH: [string, number, string, string][] = [
 ];
 const SENT: [string, number][] = [["Positive", 68], ["Neutral", 24], ["Negative", 8]];
 const OUT: [string, number][] = [["Booked", 55], ["Resolved", 30], ["Callback", 15]];
-const INTG: [string, string[]][] = [["Telephony", ["Twilio", "Plivo"]], ["CRM", ["Salesforce", "HubSpot", "Zoho"]], ["AI and voice", ["OpenAI", "Deepgram", "Azure", "ElevenLabs"]]];
+const INTG: [string, string[]][] = [["Telephony", ["Twilio", "Plivo", "Vonage"]], ["CRM", ["Salesforce", "HubSpot", "Zoho"]], ["AI and voice", ["OpenAI", "Deepgram", "Azure", "ElevenLabs"]]];
 
 const box = "rounded-2xl border border-line/15 bg-base p-4";
 const lbl = "mb-2.5 text-xs font-semibold uppercase tracking-wider text-muted";
@@ -113,7 +114,9 @@ export default function Tunk() {
 
         <div onPointerEnter={() => setAuto(false)} className="rounded-[28px] bg-base p-[18px] shadow-[0_30px_70px_-30px_rgba(17,24,39,.3)] ring-1 ring-line/10">
           <div className="flex flex-wrap items-center gap-4 px-1.5 pb-3.5">
-            <div className="font-display text-[1.7rem] font-extrabold italic leading-none tracking-tighter">Tunk</div>
+            <Image
+src="/tunk-logo.png"alt="Tunk"width={464}height={128}className="h-8 w-auto"
+/>
             <div role="tablist" className="order-3 flex basis-full gap-2 overflow-x-auto p-0.5 [scrollbar-width:none] md:order-none md:flex-1 md:basis-auto">
               {TABS.map((t, i) => (
                 <button key={t} role="tab" aria-selected={tab === i} onClick={() => { setAuto(false); setTab(i); }}
