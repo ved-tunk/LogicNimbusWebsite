@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "LogicNimbus builds AI products that help businesses work faster and smarter. Makers of Tunk, voice to text.",
   openGraph: { title: "LogicNimbus – Harvesting the power of AI", description: "AI products for businesses of every size.", url: "https://logicnimbus.com", type: "website" },
 };
-export const viewport: Viewport = { themeColor: "#F6F8FF", viewportFit: "cover" };
+export const viewport: Viewport = { themeColor: "#FFFFFF", viewportFit: "cover" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

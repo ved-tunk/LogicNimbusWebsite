@@ -3,7 +3,7 @@ import { pillars } from "@/lib/content";
 
 export default function Approach() {
   return (
-    <section id="approach" className="sec bg-base2">
+    <section id="approach" className="sec">
       <div className="wrap">
         <h2 className="h2 mb-9">What sets us apart</h2>
         <div className="grid gap-6 md:grid-cols-3">

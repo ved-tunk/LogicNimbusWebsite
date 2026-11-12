@@ -7,13 +7,15 @@ const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
-      colors: { base: c("bg"), base2: c("bg2"), fg: c("fg"), muted: c("muted"), line: c("line"), volt: c("volt"), dawn: c("dawn") },
+      colors: { base: c("bg"), base2: c("bg2"), fg: c("fg"), muted: c("muted"), line: c("line"), volt: c("volt"), dawn: c("dawn"), soft: c("soft") },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
         body: ["var(--font-body)", "system-ui", "sans-serif"],
       },
       keyframes: {
         rise: { to: { transform: "none" } },
+        pop: { from: { opacity: "0", transform: "translateY(8px)" } },
+        pillin: { to: { opacity: "1", transform: "none" } },
         fade: { to: { opacity: "1" } },
         slide: { to: { transform: "translateX(-50%)" } },
         ping2: { "70%": { boxShadow: "0 0 0 8px transparent" } },
@@ -21,6 +23,8 @@ const config: Config = {
       },
       animation: {
         rise: "rise 1s cubic-bezier(.2,.8,.2,1) forwards",
+        pop: "pop .4s both",
+        pillin: "pillin .5s forwards",
         fade: "fade 1s forwards",
         slide: "slide 40s linear infinite",
         ping2: "ping2 2s infinite",

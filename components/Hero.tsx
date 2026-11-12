@@ -10,7 +10,7 @@ export default function Hero() {
     const cv = ref.current;
     const ctx = cv?.getContext("2d");
     if (!cv || !ctx) return;
-    const dot = "#4B3FE0", warm = "#D9772B", rgb = "75,63,224";
+    const dot = "#0C9F4A", warm = "#087F3A", rgb = "12,159,74";
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const dpr = Math.min(devicePixelRatio || 1, 2);
     const gauss = () => (Math.random() + Math.random() + Math.random() - 1.5) / 1.5;

@@ -23,8 +23,8 @@ export default function Home() {
         <About />
         <Services />
         <Process />
-        <Approach />
         <Tunk />
+        <Approach />
         <Industries />
         <Faq />
         <Contact />

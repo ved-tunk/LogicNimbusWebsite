@@ -34,3 +34,14 @@ export const tunkFeatures = [
   { title: "Call analytics", text: "Sentiment, intent and outcome scored on every conversation the moment it ends." },
   { title: "Speech to text", text: "Real-time transcription across dozens of languages and accents, returned while the caller is still speaking." },
 ];
+
+// TODO: replace with the real Tunk documentation URL
+export const docsUrl = "https://tunk.ai/";
+export const specs = [
+  ["Category", "Conversational Agentic AI"],
+  ["Languages", "30+ (International + Regional)"],
+  ["Providers", "15+ (Telephony, Model, TTS, STT)"],
+  ["Response time", "\u2264 900ms"],
+  ["Channels", "Phone & Web"],
+];
+export const useCases = ["Appointment Booking", "Lead Qualification", "Query & Order Status", "Payment Reminders", "Surveys", "Complaint & Grievance Support"];
